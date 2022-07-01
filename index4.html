@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<h1 style="color: rebeccapurple;text-align: center" >DI CHUYỂN HÌNH DŨNG ĐẾN VỊ TRÍ CỦA DIỆP BẰNG PHÍM DI CHUYỂN TRÊN BÀN PHÍM</h1>
+<img  src="img/dung.jpg" id="dung" style="width: 150px; height: 200px; position: absolute; top: 0px; left: 0px">
+<img  src="img/diep.jpg" id="diep" style="width: 150px; height:200px; position: absolute; top: 500px; left:500px">
+<script>
+    let image = document.getElementById('dung');
+    let image2 =document.getElementById('diep');
+    window.addEventListener("keydown", moveWithKeyboard);
+    function moveRight() {
+        image.style.left = parseInt(image.style.left) + 20 +'px';
+    }
+    function moveLeft() {
+        image.style.left = parseInt(image.style.left) - 20 +'px';
+    }
+    function moveUp() {
+        image.style.top = parseInt(image.style.top) - 20 +'px';
+    }
+    function moveDown() {
+        image.style.top = parseInt(image.style.top) + 20 +'px';
+    }
+    function moveWithKeyboard(evt) {
+        let dunga = parseInt(image.style.left);
+        let dungb = parseInt(image.style.top);
+        let diepa = parseInt(image2.style.left);
+        let diepb = parseInt(image2.style.top);
+
+        let dungx = dunga + parseInt(image.style.width);
+        let dungy = dungb + parseInt(image.style.height);
+        let diepx = diepa + parseInt(image2.style.width);
+        let diepy = diepb + parseInt(image2.style.height);
+
+        let x = dungx >= diepa && diepx >= dunga;
+        let y = dungy >= diepb && diepy >= dungb;
+
+        if (x && y) {
+            if (dungx == diepa || dungy == diepb || diepx == dunga) {
+                moveLeft();
+            }
+            if (dungy == diepb) {
+                moveUp();
+            }
+            if (diepx == dunga) {
+                moveRight();
+            }
+            if (diepy == dungb) {
+                moveDown();
+            }
+            alert('HiHi Bé xinh quá. Cho Dũng làm quen nhé.');
+            alert('Iu Iu ^_^');
+            console.log(moveRight())
+        } else {
+        switch (evt.keyCode){
+            case 37:
+                moveLeft();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 38:
+                moveUp();
+                break;
+            case 40:
+                moveDown();
+                break;
+        }
+    }}
+</script>
+</body>
+</html>

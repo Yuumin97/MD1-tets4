@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="text-align: center; color: deeppink">LẠI ĐÂY THẦY XEM CHO QUẺ TÌNH DUYÊN</h1>
+<h3>Nhập năm sinh của con vào ô ở dưới</h3>
+<input id="namSinh" type="text">
+<h4> Ấn vào nút phía dưới con nhé</h4>
+<button onclick="anVao()">Ấn vào</button>
+<h1 id="kq1"></h1>
+<h1 id="kq2"></h1>
+<script>
+    function anVao() {
+        let tuoi = document.getElementById('namSinh').value;
+        switch (tuoi % 10) {
+            case 0:
+                document.getElementById('kq1').innerHTML = 'CANH';
+                break;
+            case 1:
+                document.getElementById('kq1').innerHTML = 'TÂN';
+                break;
+            case 2:
+                document.getElementById('kq1').innerHTML = 'NHÂM';
+                break;
+            case 3:
+                document.getElementById('kq1').innerHTML = 'QUÝ';
+                break;
+            case 4:
+                document.getElementById('kq1').innerHTML = 'GIÁP';
+                break;
+            case 5:
+                document.getElementById('kq1').innerHTML = 'ẤT';
+                break;
+            case 6:
+                document.getElementById('kq1').innerHTML = 'BÍNH';
+                break;
+            case 7:
+                document.getElementById('kq1').innerHTML = 'ĐINH';
+                break;
+            case 8:
+                document.getElementById('kq1').innerHTML = 'MẬU';
+                break;
+            case 9 :
+                document.getElementById('kq1').innerHTML = 'KỶ';
+                break;
+        }
+        switch (tuoi % 12) {
+            case 0:
+                document.getElementById('kq2').innerHTML = "THÂN";
+                break;
+            case 1:
+                document.getElementById('kq2').innerHTML = "DẬU";
+                break;
+            case 2:
+                document.getElementById('kq2').innerHTML = "TUẤT";
+                break;
+            case 3:
+                document.getElementById('kq2').innerHTML = "HỢI";
+                break;
+            case 4:
+                document.getElementById('kq2').innerHTML = "TÝ";
+                break;
+            case 5:
+                document.getElementById('kq2').innerHTML = "SỬU";
+                break;
+            case 6:
+                document.getElementById('kq2').innerHTML = "DẦN";
+                break;
+            case 7:
+                document.getElementById('kq2').innerHTML = "MÃO";
+                break;
+            case 8:
+                document.getElementById('kq2').innerHTML = "THÌN";
+                break;
+            case 9:
+                document.getElementById('kq2').innerHTML = "TỴ";
+                break;
+            case 10:
+                document.getElementById('kq2').innerHTML = "NGỌ";
+                break;
+            case 11:
+                document.getElementById('kq2').innerHTML = "MÙI";
+                break;
+        }
+    }
+</script>
+</body>
+</html>

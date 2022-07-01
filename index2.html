@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Nhập độ dài từng cạnh của tam giác</h3>
+<input id="canha" type="text">
+<input id="canhb" type="text">
+<input id="canhc" type="text">
+<br>
+<br>
+<p id="kq"></p>
+<button onclick="anVao()"> Ấn vào để kiểm tra </button>
+<script>
+    function anVao() {
+        let canhA = document.getElementById('canha').value;
+        let canhB = document.getElementById('canhb').value;
+        let canhC = document.getElementById('canhc').value;
+        if (canhA > 0 && canhB > 0 && canhC > 0 && (canhA * canhA) + (canhB * canhB) == (canhC * canhC) || (canhB * canhB) + (canhC * canhC) == (canhA * canhA) || (canhA * canhA) + (canhC * canhC) == (canhB * canhB)) {
+            document.getElementById('kq').innerHTML = "Tam giác vuông rồi còn gì nữa";
+        } else {
+            document.getElementById('kq').innerHTML = "Không phải tam giác vuông rồi quê chưa";
+        }
+    }
+</script>
+</body>
+</html>
